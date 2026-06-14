@@ -157,7 +157,7 @@ class Worker extends \Illuminate\Queue\Worker implements
         }
     }
 
-    public function stop($status = 0, $options = null)
+    public function stop($status = 0, $options = null, $reason = null)
     {
         if ($this->interop) {
             $this->stopped = true;
@@ -165,7 +165,7 @@ class Worker extends \Illuminate\Queue\Worker implements
             return;
         }
 
-        parent::stop($status, $options);
+        parent::stop($status, $options, $reason);
     }
 
     public function setExtensions(array $extensions): self
