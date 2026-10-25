@@ -157,7 +157,7 @@ class Worker extends \Illuminate\Queue\Worker implements
         }
     }
 
-    public function stop($status = 0, $options = null, $reason = null)
+    public function stop($status = 0, $options = null, $reason = null, $connectionName = null, $queue = null)
     {
         if ($this->interop) {
             $this->stopped = true;
